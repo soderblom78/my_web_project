@@ -55,11 +55,11 @@ https://www.tooplate.com/view/2123-simply-amazed
         <main id="content-box" class="order-first" >
             <div class="banner-section section parallax-window"  data-parallax="scroll" data-image-src="static/img/section-1-bg.jpg" id="section-1">
                 <nav>
-                    <button class="button" style="border-radius: 25px; background-color: #f59794; opacity: 0.3;" >
-                        <span>
-                            HejHOOPGALOPP
-                        </span>
-                    </button>
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <input type="file" id="myFile" name="filename">
+                        <input type="submit" value="Upload and Process">
+                      </form>
+                      
                 </nav>
             </div>
         
