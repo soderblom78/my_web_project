@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Simply Amazed HTML Template by Tooplate</title>
+    <title>Base</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" type="text/css" />
@@ -56,11 +56,10 @@ https://www.tooplate.com/view/2123-simply-amazed
         <main id="content-box" class="order-first" >
             <div class="banner-section section parallax-window"  data-parallax="scroll" data-image-src="static/img/section-1-bg.jpg" id="section-1">
                 <nav>
-                    <form action="/upload" method="post" enctype="multipart/form-data">
-                        <input type="file" id="myFile" name="filename">
-                        <input type="submit" value="Upload and Process">
-                      </form>
-                      
+                    <div>
+                        {% block content %}{% endblock %}
+                    </div>
+                    
                 </nav>
             </div>
         

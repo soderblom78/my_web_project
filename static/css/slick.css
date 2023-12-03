@@ -238,3 +238,12 @@
     opacity: 1;
     content: '\f192';
   }
+
+  {% block styles %}
+        .inline-block-container {
+            display: inline-block;
+            margin: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        {% endblock %}

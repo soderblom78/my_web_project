@@ -1,18 +1,21 @@
-var i = 0;
-function move() {
-  if (i == 0) {
-    i = 1;
-    var elem = document.getElementById("myBar");
-    var width = 1;
-    var id = setInterval(frame, 10);
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-        i = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-      }
-    }
-  }
-}
+document.addEventListener("DOMContentLoaded", function() {
+  // Add an event listener to the button
+  var button = document.getElementById("downloadButton");
+  button.addEventListener("click", function(event) {
+      // Prevent the default form submission behavior
+      event.preventDefault();
+
+      // Disable the button to prevent multiple clicks
+      button.disabled = true;
+
+      // Show the loading message
+      document.getElementById("loadingMessage").style.display = "block";
+
+      // Your file processing logic here (if any)
+
+      // Submit the form programmatically
+      document.getElementById("downloadForm").submit();
+  });
+});
+
+

@@ -59,7 +59,7 @@ def upload():
                 X = df["headlines"]
                 preprocessed_texts = [preprocess_text(text) for text in X]
                 file_path, unique_identifier = label_text(X, preprocessed_texts, base_filename)
-                return redirect(url_for('download', filename=f"{base_filename}_{unique_identifier}.csv"))
+                return redirect(url_for('downloadpage', filename=f"{base_filename}_{unique_identifier}.csv"))
 
             except pd.errors.EmptyDataError:
                 return jsonify({"error": "The uploaded file is empty"})
@@ -68,9 +68,14 @@ def upload():
 
 
 
-@app.route('/download/<filename>')
+@app.route('/download/<filename>', methods=['POST'])
 def download(filename):
     return send_from_directory("customer_downloads", filename, as_attachment=True)
+
+
+@app.route('/downloadpage/<filename>', methods=['POST', "GET"])
+def downloadpage(filename):
+    return render_template("downloadpage.html", filename=filename)
 
 
 
